@@ -13,7 +13,9 @@ app.listen(PORT, () => {
 connectDB();
 
 
-
+app.use(express.json({
+    extended: false
+}));//allows us to get the data into request.body (from the user route)
 
 app.get('/', (request, response) => {
     response.send('Dev Connect has started...');
